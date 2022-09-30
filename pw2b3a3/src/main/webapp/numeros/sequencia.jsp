@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,8 +11,8 @@
 <body>
     <h1>Resultado</h1>
     <ul>
-        <h2>ETEC Professor Mário Antônio Verza</h2>
-        <c:forEach var="valor" items="$valores">
+        <h2>${aluno}</h2>
+        <c:forEach var="valor" items="${valores}">
             <li>${valor}</li>
         </c:forEach>
     </ul>

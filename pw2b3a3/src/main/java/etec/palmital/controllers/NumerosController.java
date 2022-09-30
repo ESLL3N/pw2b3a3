@@ -1,10 +1,14 @@
 package etec.palmital.controllers;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 @Controller
 public class NumerosController {
+    @Value("${aluno}")
+    private String nome;
+
     @RequestMapping("/")
     public String calc(Model model) {
         int[] resultado = null;
@@ -22,6 +26,7 @@ public class NumerosController {
             }
         }
         model.addAttribute("valores", resultado);
+        model.addAttribute("aluno", nome);
         return "/numeros/sequencia";
     }
 }
